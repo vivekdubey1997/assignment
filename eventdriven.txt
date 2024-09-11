@@ -1,0 +1,17 @@
+Node.js Event-Driven Architecture:-
+
+1-Node.js is built on an event-driven architecture, which is essential for its asynchronous and non-blocking I/O model.
+2-This architecture allows for efficient handling of concurrent requests and enhances application performance.
+
+some main components of that  Architecture:-
+
+1-Event Loop: The event loop is the core of Node.js's event-driven architecture. It
+is responsible for managing the execution of callbacks and ensuring that the application
+responds to events in a timely manner.
+2-Callbacks: Callbacks are functions that are passed as arguments to other functions.
+They are used to handle events and are executed when an event occurs.
+3-Event Emitters: Event emitters are objects that emit events to notify other parts of the
+application of changes or updates.
+4-Async I/O: Node.js uses asynchronous I/O operations to handle input/output operations.
+This allows the application to continue executing other tasks while waiting for I/O operations to complete.
+Scalability: Event-driven architecture enables scalable and high-performance applications by efficiently handling concurrent requests and asynchronous operations.

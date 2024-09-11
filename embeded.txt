@@ -1,0 +1,37 @@
+Embedded Documents :-
+
+1-Definition: Related data stored within a parent document.
+2-Pros: Faster reads, simpler schema, atomic updates.
+3-Cons: Size limits, less flexibility.
+4-Use Case: One-to-many relationships (e.g., comments in a blog post).
+example = {
+  "postTitle": "My First Blog Post",
+  "comments": [
+    { "user": "Alice", "text": "Great post!" },
+    { "user": "Bob", "text": "Thanks for sharing!" }
+  ]
+}
+
+References:-
+
+
+1-Definition: Relationships stored as IDs pointing to other documents.
+2-Pros: Better data integrity, scalability, flexibility.
+3-Cons: More complex queries, potential inconsistency.
+4-Use Case: Many-to-many relationships (e.g., users and roles).
+
+example -
+// User Document
+{
+  "username": "Alice",
+  "roles": ["roleId1", "roleId2"]
+}
+
+// Role Document
+{
+  "_id": "roleId1",
+  "roleName": "Admin"
+}
+
+conclusion :-
+Use embedded documents for tightly related, small datasets and references for larger, more complex relationships.
