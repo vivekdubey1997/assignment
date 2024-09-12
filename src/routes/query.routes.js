@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { findActiveUsers} from "../controllers/query.controller"; 
+import { findActiveProducts} from "../controllers/query.controller.js"; 
 
 
 
 const router = Router()
 
-router.route("/").get( findActiveUsers )
+router.route("/").get( findActiveProducts )
 
 
 export default router

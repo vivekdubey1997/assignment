@@ -1,11 +1,13 @@
+import { products } from "../Data/products.js";
+import Product from "../model/productModel.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
-import Product from "../models/Product.js"; // Make sure to import Product
+
 
 // Get all products
-export const getAllProducts = async (req, res) => {
+ const getAllProducts = async (req, res) => {
     try {
-        // get all products from the "products" collection
+        // Get all products from the "products" collection
         const products = await Product.find({});
         return res.status(200).json(
             new ApiResponse(200, products, "Products fetched successfully")
@@ -16,7 +18,7 @@ export const getAllProducts = async (req, res) => {
 };
 
 // Pagination the result
-export const pagination = async (req, res) => {
+ const pagination = async (req, res) => {
     try {
         const { page = 1, limit = 10 } = req.query; 
         const skip = limit * (page - 1);
@@ -44,4 +46,26 @@ export const pagination = async (req, res) => {
     }
 };
 
-export {getAllProducts,pagination}
+
+const insertedProducts = async () => {
+    try {
+        const insertedProducts = await Product.insertMany(products);
+  
+        return insertedProducts;
+    } catch (error) {
+        console.error('Error inserting categories:', error);
+        throw error; 
+    }
+};
+
+
+//   insertedProducts()
+//     .then(categories => {
+//         console.log('Inserted Categories:', categories);
+//     })
+//     .catch(err => {
+//         console.error('Failed to insert categories:', err);
+//     });
+  
+// Grouped exports
+export { getAllProducts, pagination, insertedProducts };

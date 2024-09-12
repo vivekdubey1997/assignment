@@ -1,12 +1,13 @@
 import { Router } from "express";
-import { getAllProducts,pagination } from "../controllers/product.controller"; 
+import { getAllProducts,insertedProducts,pagination } from "../controllers/product.controller.js"; 
 
 
 
 const router = Router()
 
-router.route("/pagination").get( pagination )
-router.route("/").get(getAllProducts)
+router.post('/add', insertedProducts)
+router.get("/",getAllProducts)
+router.get("/pagination", pagination)
 
 
 export default router

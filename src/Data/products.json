@@ -1,0 +1,24 @@
+[
+    {
+      "name": "Wireless Mouse",
+      "description": "Ergonomic wireless mouse with adjustable DPI.",
+      "price": 25.99,
+      "stock": 150,
+      "status": "Active"
+    },
+    {
+      "name": "Mechanical Keyboard",
+      "description": "RGB mechanical keyboard with blue switches.",
+      "price": 89.99,
+      "stock": 75,
+      "status": "Active"
+    },
+    {
+      "name": "Gaming Headset",
+      "description": "Surround sound gaming headset with a noise-canceling microphone.",
+      "price": 59.99,
+      "stock": 200,
+      "status": "Active"
+    }
+  ]
+  

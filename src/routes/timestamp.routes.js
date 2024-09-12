@@ -1,5 +1,5 @@
 import { Router } from "express";
-import {addTimestamp } from "../controllers/timestamp.controller"; 
+import {addTimestamp } from "../controllers/timestamp.controller.js"; 
 
 
 

@@ -1,23 +1,28 @@
+import Product from "../model/productModel.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 
-// Assuming i  have a Mongoose model called 'user'
-export const findActiveUsers = async (req,res) => {
+ const findActiveProducts = async (req,res) => {
   try {
-    const previousWeek = new Date();
-    previousWeek.setDate(sevenDaysAgo.getDate() - 7);
+    const today = new Date()
+    const sevenDaysAgo = new Date()
+    sevenDaysAgo.setDate(today.getDate() - 7)
 
-    const data = await user.find({
-      status: "active",
-      created_at: { $gte: sevenDaysAgo }
-    });
+const getLastWeekProducts = await Product.find({
+  status: "Active",
+  createdAt: {
+    $gte: sevenDaysAgo, 
+    $lte: today 
+  }
+})
+
     return res.status(200).json(
-        new ApiResponse(200, data, " products gets successfull")
+        new ApiResponse(200, getLastWeekProducts, " products gets successfull")
     );
   } catch (error) {
     throw new ApiError(500, error.message);
   }
 };
 
-export {findActiveUsers}
+export {findActiveProducts}
